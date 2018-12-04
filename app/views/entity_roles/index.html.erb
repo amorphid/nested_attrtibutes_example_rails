@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entity Roles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Entity</th>
+      <th>Notice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entity_roles.each do |entity_role| %>
+      <tr>
+        <td><%= entity_role.name %></td>
+        <td><%= entity_role.entity_id %></td>
+        <td><%= entity_role.notice_id %></td>
+        <td><%= link_to 'Show', entity_role %></td>
+        <td><%= link_to 'Edit', edit_entity_role_path(entity_role) %></td>
+        <td><%= link_to 'Destroy', entity_role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entity Role', new_entity_role_path %>
